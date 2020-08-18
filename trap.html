@@ -41,9 +41,10 @@
 
 		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+		
 		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		
 	</head>
 	<body class="boxed" >
 		<div class="body">
@@ -79,10 +80,10 @@
 										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
 											<nav>
 												<ul class="nav nav-pills" id="mainNav">
-													<li class="active">
+													<li class="">
 														<a href="index.html">Компания</a>
 													</li>
-													<li class="">
+													<li class="active">
 														<a href="production.html">Продукция</a>
 													</li>
 													<li class="">
@@ -103,7 +104,8 @@
 						</div>
 					</div>
 				</div>
-            </header>
+			</header>
+			
             <div class="container">
                 <h1>Трап откидной эстакадный (ТОЭ)</h1>
                 <h2>ТУ 3699-001-01104078-2015</h2>
@@ -125,11 +127,146 @@
                 <div class="image-group">
                     <div class="flex-group">
                         <img class="product-image" src="img/production/trap/IMG-9441.jpg" alt="">
-                        <img  class="product-image"src="img/production/trap/IMG-9443.jpg" alt="">
+						<img  class="product-image"src="img/production/trap/IMG_2976.JPG" alt="">
+						
                     </div>
                     <div class="flex-group">
                         <img class="product-image" src="img/production/trap/IMG_2967.JPG" alt="">
                         <img class="product-image" src="img/production/trap/IMG_3551.JPG" alt="">
-                    </div>
-                 </div>
-            </div>
+					</div>
+					
+				 </div>
+				 <div class="flex-full">
+					<img src="img/production/trap/scheme.jpg" alt="">
+				</div>
+			</div>
+			<div class="container ">
+				<div class="price-wrapper">
+					<div class="btn btn-primary btn-getPrice"  id="btn-getPrice">Узнать стоимость</div>
+				</div>
+			</div>
+			
+			</div>
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div class="modal-price">
+				
+					<form action="php/price.php" id="price-form">
+						<h4>Узнать стоимость</h3>
+						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, perferendis!</p>
+						<label for="name">
+							Ваше имя <span class="red">*</span>
+						</label>
+						<input type="text" id="name" name="name" required>
+						<label for="phone">
+							Ваш номер телефона <span class="red">*</span>
+						</label>
+						<input type="tel" id="phone" name="phone" required>
+						<label for="email">
+							Ваш e-mail <span class="red">*</span>
+						</label>
+						<input type="email" id="email" name="email" required>
+						<label for="form-text">
+							Сообщение <span class="red">*</span>
+						</label>
+						<textarea name="form-text" id="form-text" cols="30" rows="5"></textarea>
+
+						<button type="submit" class="btn btn-primary btn-submit" name="otprav">Отправить</button>
+					</form>
+				
+			</div>
+			</div>
+
+			</div>
+			<script>
+				// Get the modal
+				var modal = document.getElementById("myModal");
+
+				// Get the button that opens the modal
+				var btn = document.getElementById("btn-getPrice");
+
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close")[0];
+
+				// When the user clicks on the button, open the modal
+				btn.onclick = function() {
+				modal.style.display = "block";
+				}
+
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() {
+				modal.style.display = "none";
+				}
+
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+				}
+			</script>
+			
+			<footer id="footer">
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-2">
+								<a href="index.html" class="logo">
+									<img src="img/logo-footer.png">
+								</a>
+							</div>
+							<div class="col-md-6">
+								<p>© Copyright 2020. All Rights Reserved.</p>
+							</div>
+							<div class="col-md-4">
+								<nav id="sub-menu">
+									<ul>
+										<!-- <li><a href="page-faq.html">FAQ's</a></li> -->
+										<!-- <li><a href="sitemap.html">Sitemap</a></li> -->
+										<li><a href="contact.html">Контакты</a></li>
+										<li><a href="https://www.behance.net/alexander_sikorsky" title="Alexander Sikorsky" target="_blank">Design</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		
+				<!-- script -->
+				<script src="js/jquery.js"></script>
+				<script src="js/bootstrap.min.js"></script>
+				<script type="text/javascript" src="lib/blowup.js"></script>
+				<!-- <script src="js/common.js"></script> -->
+		
+				<!-- Theme Base, Components and Settings -->
+				<!-- <script src="js/theme.js"></script> -->
+		
+				<!-- Theme Initialization Files -->
+				<!-- <script src="js/theme.init.js"></script> -->
+				<script>
+					$(document).ready(function () {
+			
+						$(".flex-group img").each(function() {
+							
+							$(this).blowup({
+								"scale": 0.5});
+						});
+					
+						$(".flex-full img").each(function() {
+							$(this).blowup({
+								"scale": 0.5,
+								"width" : 400,
+								"height" : 400
+							})
+						})
+					})
+				</script>
+		</body>
+		</html>
+		
